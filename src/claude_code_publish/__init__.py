@@ -25,7 +25,7 @@ GITHUB_REPO_PATTERN = re.compile(
 
 PROMPTS_PER_PAGE = 5
 LONG_TEXT_THRESHOLD = (
-    1000  # Characters - text blocks longer than this are shown in index
+    300  # Characters - text blocks longer than this are shown in index
 )
 
 # Module-level variable for GitHub repo (set by generate_html)
