@@ -22,10 +22,10 @@
     var gistInfoLoaded = false;
 
     if (isGistPreview) {
-        // Extract gist ID from URL path like /gist-id/index.html or /gist-id/raw/index.html
-        var pathMatch = window.location.pathname.match(/^\/([a-f0-9]+)/i);
-        if (pathMatch) {
-            gistId = pathMatch[1];
+        // Extract gist ID from URL query string like ?78a436a8a9e7a2e603738b8193b95410/index.html
+        var queryMatch = window.location.search.match(/^\?([a-f0-9]+)/i);
+        if (queryMatch) {
+            gistId = queryMatch[1];
         }
     }
 
@@ -74,15 +74,16 @@
 
     function closeModal() {
         modal.close();
-        // Update URL to remove search fragment
+        // Update URL to remove search fragment, preserving path and query string
         if (window.location.hash.startsWith('#search=')) {
-            history.replaceState(null, '', window.location.pathname);
+            history.replaceState(null, '', window.location.pathname + window.location.search);
         }
     }
 
     function updateUrlHash(query) {
         if (query) {
-            history.replaceState(null, '', '#search=' + encodeURIComponent(query));
+            // Preserve path and query string when adding hash
+            history.replaceState(null, '', window.location.pathname + window.location.search + '#search=' + encodeURIComponent(query));
         }
     }
 
