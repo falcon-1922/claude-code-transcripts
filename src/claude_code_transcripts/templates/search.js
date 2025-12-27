@@ -12,6 +12,9 @@
 
     if (!searchBox || !modal) return;
 
+    // Hide search on file:// protocol (doesn't work due to CORS restrictions)
+    if (window.location.protocol === 'file:') return;
+
     // Show search box (progressive enhancement)
     searchBox.style.display = 'flex';
 
