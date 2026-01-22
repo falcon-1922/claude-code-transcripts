@@ -1,4 +1,24 @@
 # claude-code-transcripts
+___
+| File | Description |
+  |------|-------------|
+  | SPECIFICATION.md | Input/output format specification - JSON/JSONL structure, content block types, HTML output format, transformation rules, edge cases, and limitations |
+  | ARCHITECTURE.md | Module structure, data flow diagrams, key types/interfaces, extension points, error handling strategy, and template system |
+  | INSTALLATION.md | Prerequisites, installation methods (uv/pip/pipx/source), platform-specific notes, verification steps, and troubleshooting |
+  | USAGE.md | Quick start, complete CLI reference, programmatic API documentation, configuration, annotated examples, and integration patterns |
+  | CONTRIBUTING.md | Development setup, TDD workflow, commit guidelines, and guides for adding new features |
+___
+
+Read doc-prompt.md and follow the instructions to document this repo
+___
+Document this repo. It exports Claude session JSON to HTML. Create SPECIFICATION.md, ARCHITECTURE.md, INSTALLATION.md, and USAGE.md covering input/output formats, transformation rules, CLI usage, and programmatic API.
+___
+which uv
+ 4611  brew install uv
+ 4612  uv --version
+ 4616  uvx claude-code-transcripts --help
+ 4619  uvx claude-code-transcripts local
+___
 
 [![PyPI](https://img.shields.io/pypi/v/claude-code-transcripts.svg)](https://pypi.org/project/claude-code-transcripts/)
 [![Changelog](https://img.shields.io/github/v/release/simonw/claude-code-transcripts?include_prereleases&label=changelog)](https://github.com/simonw/claude-code-transcripts/releases)
