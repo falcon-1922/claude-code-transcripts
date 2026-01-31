@@ -1,3 +1,20 @@
+ # Note
+The app shows **sessions**, not directories. Each project directory can contain **multiple session files** (`.jsonl` files).
+
+The app scans for all `**/*.jsonl` files across all project directories, so if you have 23 directories but 29 sessions, some of your project directories contain more than one session file.
+
+You can verify this by counting the total `.jsonl` files:
+
+```bash
+find ~/.claude/projects -name "*.jsonl" | wc -l
+```
+
+Or see which directories have multiple sessions:
+
+```bash
+find ~/.claude/projects -name "*.jsonl" -exec dirname {} \; | sort | uniq -c | sort -rn
+```
+
 # Usage
 
 ## Quick Start
