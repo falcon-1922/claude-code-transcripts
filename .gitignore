@@ -4,3 +4,4 @@ uv.lock
 .playwright-mcp/
 node_modules/
 Simon-Python-files/
+src/bun_transcripts/my-transcript/
